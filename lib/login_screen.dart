@@ -44,13 +44,8 @@ class LoginScreen extends StatelessWidget {
                             fontSize: 23,
                             fontWeight: FontWeight.bold,
                             height: 1.0,
-                            color: Color.fromARGB(
-                              255,
-                              69,
-                              84,
-                              146,
-                            ), // azul escuro
-                            fontFamily: 'Poppins', // ou outra fonte se desejar
+                            color: Color.fromARGB(255, 69, 84, 146),
+                            fontFamily: 'Poppins',
                           ),
                         ),
                         Text(
@@ -59,7 +54,7 @@ class LoginScreen extends StatelessWidget {
                             fontSize: 23,
                             height: 1.0,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xFF9D7DF9), // roxo claro
+                            color: Color(0xFF9D7DF9),
                             fontFamily: 'Poppins',
                           ),
                         ),
@@ -75,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                   ElevatedButton.icon(
                     onPressed: () {},
                     icon: Image.asset(
-                      'assets/images/google_logo.png', // substitua pelo caminho da sua imagem
+                      'assets/images/google_logo.png',
                       width: 24,
                       height: 24,
                     ),
@@ -99,7 +94,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  // Texto dividido com sublinhado
+
                   const Column(
                     children: [
                       Text(

@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  convex_bottom_bar: ^3.0.0
+
   cupertino_icons: ^1.0.8
 
   font_awesome_flutter: ^10.7.0

@@ -1,5 +1,6 @@
-// import 'package:app_task/components/custom_bottom_navbar/custom_bottom_navbar.dart';
+import 'package:app_task/components/custom_bottom_navbar/custom_bottom_navbar.dart';
 import 'package:app_task/components/header/header.dart';
+import 'package:app_task/components/tasks/tasks.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -25,44 +26,31 @@ class _TasksScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 240, 240, 240),
       body: SafeArea(
-        child: Stack(
+        child: Column(
           children: [
-            Column(
-              children: [
-                Header(
-                  selectedIndex: selectedIndex,
-                  onTabSelected: (index) {
-                    setState(() {
-                      selectedIndex = index;
-                    });
-                  },
-                ),
-                const SizedBox(height: 24),
-                Expanded(
-                  child: selectedIndex == 0
-                      ? const Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Text('Lista de Tasks aqui'),
-                        )
-                      : const Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Text('Categorias aqui'),
-                        ),
-                ),
-              ],
+            Header(
+              selectedIndex: selectedIndex,
+              onTabSelected: (index) {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
             ),
-
-            // Menu flutuante aqui
-            // CustomBottomNavBar(
-            //   selectedIndex: selectedIndex,
-            //   onTabSelected: (index) {
-            //     setState(() {
-            //       selectedIndex = index;
-            //     });
-            //   },
-            // ),
+            Expanded(
+              child: selectedIndex == 0
+                  ? const Tasks()
+                  : const Center(child: Text('Categorias aqui')),
+            ),
           ],
         ),
+      ),
+      bottomNavigationBar: CustomBottomNavBar(
+        selectedIndex: selectedIndex,
+        onTabSelected: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
       ),
     );
   }

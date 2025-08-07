@@ -10,7 +10,7 @@ class Header extends StatelessWidget {
     required this.onTabSelected,
   });
 
-  final List<String> tabs = const ['Tarefas', 'Categorias'];
+  final List<String> tabs = const ['Tasks', 'Categories'];
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,15 @@ class Header extends StatelessWidget {
       children: [
         const SizedBox(height: 24),
         Padding(
-          padding: const EdgeInsets.only(
-            top: 20,
-          ), // Aqui você controla o margin top
+          padding: const EdgeInsets.only(top: 20),
           child: const Center(
             child: Text(
-              'Minhas  tarefas',
-              style: TextStyle(fontSize: 24, fontFamily: 'Poppins'),
+              'My tasks',
+              style: TextStyle(
+                fontSize: 24,
+                fontFamily: 'Poppins',
+                color: Color.fromARGB(255, 107, 107, 107),
+              ),
             ),
           ),
         ),
@@ -61,7 +63,7 @@ class Header extends StatelessWidget {
                         border: Border(
                           bottom: BorderSide(
                             color: isSelected
-                                ? const Color.fromARGB(255, 44, 102, 213)
+                                ? const Color.fromARGB(255, 53, 135, 182)
                                 : Colors.transparent,
                             width: 2.5,
                           ),
@@ -73,8 +75,8 @@ class Header extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                           color: isSelected
-                              ? const Color.fromARGB(255, 44, 102, 213)
-                              : Colors.black87,
+                              ? const Color.fromARGB(255, 53, 135, 182)
+                              : const Color.fromARGB(255, 107, 107, 107),
                           fontFamily: 'Poppins',
                         ),
                       ),
